@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  My Apps </title>
-    <button class="error-button">Version 2.0.0</button>
     <script>
         document.addEventListener("keydown", function(event) {
             if (event.ctrlKey && event.key === "z") {
@@ -14,11 +13,12 @@
             }
         });
     </script>
-
+        <button class="error-button">Version 2.0.0</button>
+        <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
 <body>
     <style>
-
+/*divider*/ 
         body {
             font-family: 'Roboto', sans-serif;
             background-image: url('https://img.goodfon.com/original/6000x4080/b/6a/3d-rendering-background-design-abstract-geometry-geometric-s.jpg');
@@ -56,19 +56,113 @@
         }
 
         #settingsMenu {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            width: 300px;
-            text-align: left;
-            z-index: 2; /* Ensures settings menu is above everything */
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #da6d6d;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    text-align: left;
+    z-index: 1000; /* Higher z-index for better visibility */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#settingsMenu h2 {
+    margin: 0 0 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+#settingsMenu label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#settingsMenu input, #settingsMenu select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+}
+
+ .time-container {
+    background-color: #e74c3c; /* Red background */
+    color: white;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    padding: px 40px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#settingsMenu button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#settingsMenu button:hover {
+    background-color: #0056b3;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Overlay for better visibility */
+#settingsOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+        .time-container {
+            background-color: #d32f2f; /* Red background */
+            color: white; /* White text */
+            padding: 7px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: fit-content;
+            display: flex;
+            justify-content: center;
         }
+
 
         .error-button {
             background-color: #E53935; /* Red background */
@@ -76,17 +170,16 @@
             font-size: 16px;
             font-weight: bold;
             border: none;
-            padding: 10px 25px;
+            padding: 7px 10px;
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            max-width: 150px;
+            max-width: 130px;
             text-align: center;
             display: block;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
-
-
+        
         .url-button {
             background: linear-gradient(to right, #e67b7b, #b73636); /* Purple to blue gradient */
             color: white; /* White text */
@@ -181,7 +274,6 @@
             margin: 100000px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
         
         .separator {
             border-top: 2px solid #e09090;
@@ -218,7 +310,7 @@
 <canvas id="particleCanvas"></canvas>
 
 <div style="text-align: center; margin-top: 60px; position: relative; z-index: 1;">
-      <h1 class="page-title">👑Harlem My King 👑</h1>
+      <h1 class="page-title">❤👑Harlem My King 👑❤</h1>
       <h1 class="paragraph">Made by Jebunn | Still In Development!</p>
       <p class="paragraph"> </p>
     <input type="text" id="urlInput" style="padding: 8px 15px; border-radius: 8px; border: none; background-color: #ffffff; color: rgb(0, 0, 0); width: 90%; box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.3);" placeholder="Enter a URL or search term">
@@ -231,8 +323,8 @@
 </div>
 
 <div id="settingsMenu">
-    <span id="closeMenu" style="float: right; cursor: pointer; color: #aaa;">❌</span>
-    <h3 style="color: #fff; border-bottom: 1px solid #555; padding-bottom: 10px; margin-bottom: 15px;">Settings</h3>
+    <span id="closeMenu" style="float: right; cursor: pointer; color: #f8a3a3;">❌</span>
+    <h3 style="color: #ffffff; border-bottom: 1px solid #ce7575; padding-bottom: 10px; margin-bottom: 15px;">Settings</h3>
     <label style="color: #bbb; margin-bottom: 5px; display: block;">Default Browsers:</label>
     <div style="margin-bottom: 15px;">
         <button id="googleButton" class="toggle-button active">Google</button>
@@ -240,10 +332,10 @@
     </div>
 
     <label style="color: #bbb; margin-bottom: 5px; display: block;">Tab Title:</label>
-    <input type="text" id="titleInput" style="width: 100%; padding: 8px; border-radius: 8px; border: none; background-color: #333; color: white; box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); margin-bottom: 10px;">
+    <input type="text" id="titleInput" style="width: 100%; padding: 8px; border-radius: 8px; border: none; background-color: #f8abab; color: white; box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); margin-bottom: 10px;">
 
     <label style="color: #bbb; margin-bottom: 5px; display: block;">Favicon URL:</label>
-    <input type="text" id="faviconInput" style="width: 100%; padding: 8px; border-radius: 8px; border: none; background-color: #333; color: white; box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); margin-bottom: 15px;">
+    <input type="text" id="faviconInput" style="width: 100%; padding: 8px; border-radius: 8px; border: none; background-color: #f8abab; color: white; box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); margin-bottom: 15px;">
 
     <div style="margin-bottom: 15px;">
         <label style="color: #bbb;">Particles:</label>
@@ -272,6 +364,7 @@
     <h5 class="paragraph">An Great Asortment of games that are fun when needed to waste time.</p>
     <div class="separator"></div>
     <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Slope</button>
+    <button class="url-button" data-url="https://1v1.lol/" onclick="openURLFromButton(this)">1v1.lol</button>
     <button class="url-button" data-url="https://deadshot.io" onclick="openURLFromButton(this)">Deadshot</button>
     <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Slope</button>
     <button class="url-button" data-url="https://softbodytetris.netlify.app" onclick="openURLFromButton(this)">Sofybody Tetris</button>
@@ -307,6 +400,7 @@
     <h2 class="section-header">Information</h2>
     <div class="separator"></div>
     <p class="paragraph">Made by Jebunn "vscode" Salem Middle School </p>
+    <p class="paragraph">When you open a proxy link press rightshift to open the mod menu</p>
     <p class="paragraph">Press Cntl and z or press the panic button at goto links to panic</p>
     <p class="paragraph">The panic button hides your screen and brings it to google drive</p>
     <p class="paragraph">Always include "https://" at the beginning of your URL unless you are searching the web</p>
@@ -335,45 +429,251 @@ function openURLFromButton(button) {
 }
 
 function loadWebsiteInNewTab(url) {
-   const title = document.getElementById("titleInput").value || 'Home - Google Drive';
-   const favicon = document.getElementById("faviconInput").value || 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png';
-   var newTab = window.open();
+    const title = 'Home - Google Drive';
+    const favicon = 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png';
+    const newTab = window.open();
 
-   newTab.document.write(`
-       <!DOCTYPE html>
-       <html>
-       <head>
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-           <link rel="icon" href="${favicon}" type="image/x-icon" />
-           <meta charset="UTF-8">
-           <title>${title}</title>
+    const pageContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="${favicon}" type="image/x-icon">
+            <meta charset="UTF-8">
+            <title>${title}</title>
+            <style>
+                body {
+                    margin: 0;
+                    overflow: hidden;
+                    font-family: Roboto;
+                    background-color: black;
+                }
 
-           <style>
-               body {
-                   margin: 0;
-                   overflow: hidden;
-               }
-               embed {
-                   position: absolute;
-                   top: 0;
-                   left: 0;
-                   width: 100%;
-                   height: 100%;
-                   border: none;
-               }
-           </style>
-       </head>
-       <body>
-           <embed id="embeddedPage" src="${url}">
+                embed {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
 
-       </body>
-       </html>
-   `);
+                #settingsMenu {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 400px; /* Increased size */
+                    background: rgba(0, 0, 0, 0.9);
+                    border-radius: 10px;
+                    padding: 30px;
+                    display: none;
+                    color: white;
+                }
 
-   newTab.document.close();
+                .close-btn {
+                    background: red;
+                    border: none;
+                    padding: 10px;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    width: 100%;
+                }
+
+                .setting-item {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px;
+                    background: #222;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+
+                .toggle-btn {
+                    padding: 5px 10px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+                .enabled {
+                    background: green;
+                    color: white;
+                }
+
+                .ui-box {
+                    position: fixed;
+                    top: 10px;
+                    right: 10px;
+                    background: rgba(211, 47, 47, 0.8);
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    cursor: grab;
+                }
+            </style>
+        </head>
+        <body>
+            <embed id="embeddedPage" src="${url}">
+
+            <div class="ui-box" id="uiBox">
+                <span id="timeDisplay"></span> |
+                <span id="fpsCounter"></span> |
+                <span id="pingCounter"></span>
+            </div>
+
+            <div id="settingsMenu">
+                <h2>👑Harlem My King👑 | Mod Menu</h2>
+                <div class="setting-item">
+                    <span>Enable Clock</span>
+                    <button id="toggleClock" class="toggle-btn enabled">Enabled</button>
+                </div>
+                <div class="setting-item">
+                    <span>Enable FPS Counter</span>
+                    <button id="toggleFPS" class="toggle-btn enabled">Enabled</button>
+                </div>
+                <div class="setting-item">
+                    <span>Enable Ping Counter</span>
+                    <button id="togglePing" class="toggle-btn enabled">Enabled</button>
+                </div>
+                <div class="setting-item">
+                    <span>Move UI Box</span>
+                    <button id="moveUiBox" class="toggle-btn">Enable Drag</button>
+                </div>
+                <button class="close-btn">Close</button>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    let clockEnabled = true;
+                    let fpsEnabled = true;
+                    let pingEnabled = true;
+                    let moveUiEnabled = false;
+                    let settingsMenu = document.getElementById('settingsMenu');
+                    let uiBox = document.getElementById('uiBox');
+
+                    function updateTime() {
+                        if (clockEnabled) {
+                            const now = new Date();
+                            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString();
+                        }
+                    }
+                    setInterval(updateTime, 1000);
+                    updateTime();
+
+                    let lastLoop = performance.now();
+                    function updateFPS() {
+                        const thisLoop = performance.now();
+                        const fps = Math.round(1000 / (thisLoop - lastLoop));
+                        lastLoop = thisLoop;
+
+                        if (fpsEnabled) {
+                            document.getElementById('fpsCounter').textContent = 'FPS: ' + fps;
+                        }
+                    }
+                    setInterval(updateFPS, 15);
+
+                    function updatePing() {
+                        if (!pingEnabled) return;
+                        const start = performance.now();
+                        fetch('https://www.google.com', { mode: 'no-cors' })
+                            .then(() => {
+                                const ping = Math.round(performance.now() - start);
+                                document.getElementById('pingCounter').textContent = 'Ping: ' + ping + ' ms';
+                            })
+                            .catch(() => {
+                                document.getElementById('pingCounter').textContent = 'Ping: N/A';
+                            });
+                    }
+                    setInterval(updatePing, 1000);
+
+                    document.getElementById('toggleClock').addEventListener('click', function () {
+                        clockEnabled = !clockEnabled;
+                        this.textContent = clockEnabled ? 'Enabled' : 'Disabled';
+                        this.classList.toggle('enabled', clockEnabled);
+                        document.getElementById('timeDisplay').style.display = clockEnabled ? 'inline' : 'none';
+                    });
+
+                    document.getElementById('toggleFPS').addEventListener('click', function () {
+                        fpsEnabled = !fpsEnabled;
+                        this.textContent = fpsEnabled ? 'Enabled' : 'Disabled';
+                        this.classList.toggle('enabled', fpsEnabled);
+                        document.getElementById('fpsCounter').style.display = fpsEnabled ? 'inline' : 'none';
+                    });
+
+                    document.getElementById('togglePing').addEventListener('click', function () {
+                        pingEnabled = !pingEnabled;
+                        this.textContent = pingEnabled ? 'Enabled' : 'Disabled';
+                        this.classList.toggle('enabled', pingEnabled);
+                        document.getElementById('pingCounter').style.display = pingEnabled ? 'inline' : 'none';
+                    });
+
+                    document.querySelector('.close-btn').addEventListener('click', function () {
+                        settingsMenu.style.display = 'none';
+                    });
+
+                    document.addEventListener('keydown', function (event) {
+                        if (event.code === 'ShiftRight') {
+                            settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+                        }
+                    });
+
+                    // Move UI Box
+                    document.getElementById('moveUiBox').addEventListener('click', function () {
+                        moveUiEnabled = !moveUiEnabled;
+                        this.textContent = moveUiEnabled ? 'Disable Drag' : 'Enable Drag';
+                        this.classList.toggle('enabled', moveUiEnabled);
+
+                        if (moveUiEnabled) {
+                            uiBox.onmousedown = function (event) {
+                                let shiftX = event.clientX - uiBox.getBoundingClientRect().left;
+                                let shiftY = event.clientY - uiBox.getBoundingClientRect().top;
+
+                                function moveAt(pageX, pageY) {
+                                    uiBox.style.left = pageX - shiftX + 'px';
+                                    uiBox.style.top = pageY - shiftY + 'px';
+                                }
+
+                                function onMouseMove(event) {
+                                    moveAt(event.pageX, event.pageY);
+                                }
+
+                                document.addEventListener('mousemove', onMouseMove);
+
+                                uiBox.onmouseup = function () {
+                                    document.removeEventListener('mousemove', onMouseMove);
+                                    uiBox.onmouseup = null;
+                                };
+                            };
+                            uiBox.ondragstart = function () { return false; };
+                        } else {
+                            uiBox.onmousedown = null;
+                        }
+                    });
+                });
+            </\script>
+        </body>
+        </html>
+    `;
+
+    newTab.document.write(pageContent);
+    newTab.document.close();
 }
 
 
+
+
+
+function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('timeDisplay').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call
 
 document.getElementById("openNewTabButton").addEventListener("click", function() {
     let input = document.getElementById("urlInput").value.trim();
