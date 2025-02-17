@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,7 @@
             }
         });
     </script>
-        <button class="error-button">Version 2.0.0</button>
+        <button class="error-button">Version 2.1.5</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
 <body>
@@ -319,7 +318,7 @@
 
     <h5 class="paragraph">*Info and Debugging at the bottom*</h5>
     <h5 class="paragraph">This website is private and if this site has been leaked it will be blocked and currently this website is only given to only 4 people including me.</h5>
-    <h5 class="paragraph">Link has been given to Harlem, Aj, Jayden and Michael</h5>
+    <h5 class="paragraph">Link has been given to Harlem, Aj, Jayden, Michael, Griffin, Collin and Leo</h5>
 </div>
 
 <div id="settingsMenu">
@@ -363,8 +362,6 @@
     <h2 class="section-header">Games</h2>
     <h5 class="paragraph">An Great Asortment of games that are fun when needed to waste time.</p>
     <div class="separator"></div>
-    <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Slope</button>
-    <button class="url-button" data-url="https://1v1.lol/" onclick="openURLFromButton(this)">1v1.lol</button>
     <button class="url-button" data-url="https://deadshot.io" onclick="openURLFromButton(this)">Deadshot</button>
     <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Slope</button>
     <button class="url-button" data-url="https://softbodytetris.netlify.app" onclick="openURLFromButton(this)">Sofybody Tetris</button>
@@ -372,13 +369,29 @@
     <button class="url-button" data-url="https://www.hoodamath.com/mobile/games/drift-boss/game.html" onclick="openURLFromButton(this)">Drift Boss</button>
     <button class="url-button" data-url="https://games.cdn.famobi.com/html5games/c/cut-the-rope/v070/?fg_domain=play.famobi.com&fg_aid=A-SILVERGAMES&fg_uid=4531b37c-a8e0-4a67-9ebd-e8d3190b6277&fg_pid=8a24e5f2-94a8-4593-b4e5-81cc68f524c8&fg_beat=969&original_ref=https%3A%2F%2Fwww.silvergames.com%2F" onclick="openURLFromButton(this)">Cut The Rope</button>
     <button class="url-button" data-url="https://www.2048.org/" onclick="openURLFromButton(this)">2048</button>
-    <button class="url-button" data-url="https://paper-io.com/" onclick="openURLFromButton(this)">Paper.io </button>
     <button class="url-button" data-url="https://bab.dev/flappy-bird" onclick="openURLFromButton(this)">Flappy Bird</button>
     <button class="url-button" data-url="https://1kh0.github.io/projects/retro-bowl/index.html" onclick="openURLFromButton(this)">Retro Bowl</button>
     <button class="url-button" data-url="https://bab.dev/blockblast" onclick="openURLFromButton(this)">Block Blast</button>
     <button class="url-button" data-url="https://bab.dev" onclick="openURLFromButton(this)">Bab.Dev</button>
     </Div>
+    <div style="text-align: center; margin-top: 40px;">
+        <h2 class="section-header">Ovo Versions</h2>
+        <h5 class="paragraph">Modded and other vesrsions of Ovo</p>
+    <button class="url-button" data-url="https://ovo-5yu.pages.dev/versions/1.4.4b/" onclick="openURLFromButton(this)">OvO Classic</button>
+    <button class="url-button" data-url="https://ovo-5yu.pages.dev/versions/doublejump/" onclick="openURLFromButton(this)">OvO Double Jump</button>
+</div>
 
+    <div style="text-align: center; margin-top: 40px;">
+        <h2 class="section-header">Io Games</h2>
+        <h5 class="paragraph">Games made for the internet and for phones that can work ofline.</p>
+            <button class="url-button" data-url="https://1v1.lol/" onclick="openURLFromButton(this)">1v1.lol</button>
+            <button class="url-button" data-url="https://hole-io.com" onclick="openURLFromButton(this)">Hole.io</button>
+            <button class="url-button" data-url="https://kour.io" onclick="openURLFromButton(this)">Kour.io</button>
+            <button class="url-button" data-url="https://slither.io" onclick="openURLFromButton(this)">Slither.io</button>
+            <button class="url-button" data-url="https://snowball-io.io" onclick="openURLFromButton(this)">Snowball.io</button>
+            <button class="url-button" data-url="https://paper-io.com/" onclick="openURLFromButton(this)">Paper.io </button>
+        </div>
+    
 <div style="text-align: center; margin-top: 40px;">
     <h2 class="section-header">Minecraft</h2>
     <h5 class="paragraph">This is part of games and it is the eaglercraft part of games</p>
@@ -502,18 +515,24 @@ function loadWebsiteInNewTab(url) {
                     color: white;
                 }
 
+                /* UI Box (Draggable) */
                 .ui-box {
                     position: fixed;
-                    top: 10px;
-                    right: 10px;
-                    background: rgba(211, 47, 47, 0.8);
+                    top: 555px;
+                    right: 24px;
+                    background: rgba(211, 47, 47, 0.9);
                     color: white;
                     padding: 10px;
                     border-radius: 5px;
                     font-size: 14px;
                     cursor: grab;
+                    box-shadow: 0 0 10px rgba(211, 47, 47, 0.8);
+                    transition: transform 0.2s ease-in-out;
                 }
-            </style>
+                .ui-box:active {
+                    transform: scale(0.95);
+                }
+    </\Style>
         </head>
         <body>
             <embed id="embeddedPage" src="${url}">
@@ -661,10 +680,6 @@ function loadWebsiteInNewTab(url) {
     newTab.document.write(pageContent);
     newTab.document.close();
 }
-
-
-
-
 
 function updateTime() {
             const now = new Date();
