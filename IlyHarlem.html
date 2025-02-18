@@ -13,6 +13,11 @@
             }
         });
     </script>
+        <!-- The black bar -->
+        <div class="top-bar">
+            Announcement : This is a test lol don't worry.
+        </div>
+    
         <button class="error-button">Version 2.5.0</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
@@ -72,6 +77,23 @@
     font-family: Arial, sans-serif;
     animation: fadeIn 0.3s ease-in-out;
 }
+
+.top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+            transition: opacity 0.5s ease-in-out;
+        }
 
 #settingsMenu h2 {
     margin: 0 0 15px;
@@ -459,6 +481,11 @@ function loadWebsiteInNewTab(url) {
             <link rel="icon" href="${favicon}" type="image/x-icon">
             <meta charset="UTF-8">
             <title>${title}</title>
+
+        <div class="top-bar">
+            Announcement : This is a test lol don't worry.
+        </div>
+
             <style>
                 body {
                     margin: 0;
@@ -488,6 +515,23 @@ function loadWebsiteInNewTab(url) {
                     display: none;
                     color: white;
                 }
+
+    .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+            transition: opacity 0.5s ease-in-out;
+        }   
 
                 .close-btn {
                     background: red;
@@ -685,6 +729,16 @@ function loadWebsiteInNewTab(url) {
     newTab.document.write(pageContent);
     newTab.document.close();
 }
+
+        setTimeout(() => {
+            let bar = document.getElementById("topBar");
+            bar.style.opacity = "0"; // Fades out
+            setTimeout(() => {
+                bar.remove(); // Completely removes the element
+            }, 500); // Waits for fade-out transition to finish before removing
+        }, 10000);
+
+
 
 function updateTime() {
             const now = new Date();
