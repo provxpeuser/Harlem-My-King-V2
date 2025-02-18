@@ -6,18 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  My Apps </title>
-    <script>
-        document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey && event.key === "z") {
-                window.location.href = "https://drive.google.com"; // Redirect to Google Drive
-            }
-        });
-    </script>
-        <!-- The black bar -->
-        <div class="top-bar">
-            Announcement : This is a test lol don't worry.
+    <div class="announcement-container">
+        <div id="announcement-evade" class="announcement-evade">
+            Tj Don't Bust in My AZZ Pls
         </div>
-    
         <button class="error-button">Version 2.5.0</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
@@ -78,7 +70,7 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
-.top-bar {
+.Announcement-Roblox1 {
             position: fixed;
             top: 0;
             left: 0;
@@ -93,6 +85,30 @@
             font-family: Arial, sans-serif;
             z-index: 1000;
             transition: opacity 0.5s ease-in-out;
+        }
+
+
+        
+        .announcement-evade {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
+            padding: 15px 30px;
+            border: 2px solid #ffcc00; /* Yellow border */
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            opacity: 1;
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+   
+        .fade-out {
+            opacity: 0;
+            transform: translateX(-100%) translateX(100%);
         }
 
 #settingsMenu h2 {
@@ -730,14 +746,42 @@ function loadWebsiteInNewTab(url) {
     newTab.document.close();
 }
 
+document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.key === "z") {
+                window.location.href = "https://drive.google.com"; // Redirect to Google Drive
+            }
+        });
+
+        // Delay fade-out effect to prevent instant disappearance
         setTimeout(() => {
-            let bar = document.getElementById("topBar");
-            bar.style.opacity = "0"; // Fades out
-            setTimeout(() => {
-                bar.remove(); // Completely removes the element
-            }, 500); // Waits for fade-out transition to finish before removing
+            let announcement = document.getElementById("announcement-evade");
+            if (announcement) {
+                announcement.classList.add("fade-out");
+                
+                // OPTIONAL: Remove element after fade-out completes (1s)
+                setTimeout(() => {
+                    if (announcement) {
+                        announcement.style.display = "none";
+                    }
+                }, 1000);
+            }
         }, 10000);
 
+
+        // Delay fade-out effect to prevent instant disappearance
+        setTimeout(() => {
+            let announcement = document.getElementById("announcement-Roblox1");
+            if (announcement) {
+                announcement.classList.add("fade-out");
+                
+                // OPTIONAL: Remove element after fade-out completes (1s)
+                setTimeout(() => {
+                    if (announcement) {
+                        announcement.style.display = "none";
+                    }
+                }, 1000);
+            }
+        }, 10000);
 
 
 function updateTime() {
