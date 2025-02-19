@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  My Apps </title>
-    <div class="announcement-container">
+    <div class="announcement-container"> <!-- 
         <div id="announcement-evade" class="announcement-evade">
             Tj Don't Bust in My AZZ Pls
-        </div>
+        </div> -->
         <button class="error-button">Version 2.5.0</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
@@ -23,7 +23,7 @@
             background-position: center; /* Centers the image */
             background-repeat: repeat; /* Prevents tiling */
             height: 100vh; /* Ensures full viewport height */
-            margin: 0;
+            margin: 0; 
             color: white;
             margin: 0;
             padding: 0;
@@ -90,7 +90,7 @@
 
         
         .announcement-evade {
-            position: fixed;
+            position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
@@ -406,6 +406,10 @@
     <button class="url-button" data-url="https://html5.gamedistribution.com/0c454c9562d249d28ba3a2b50564042c/?timestamp=1713731659&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-7" onclick="openURLFromButton(this)">Vex 7</button>
     <button class="url-button" data-url="https://probablykam.github.io/Mario64webgl/" onclick="openURLFromButton(this)">Super Mario 64</button>
     <button class="url-button" data-url="https://3kh0-assets.silvereen.net/3kh0-assets/ball-dodge" onclick="openURLFromButton(this)">Ball Dodge</button>
+    <button class="url-button" data-url="https://helixjumponline.com/" onclick="openURLFromButton(this)">Helix Jump</button>
+    <button class="url-button" data-url="https://jcw87.github.io/c2-smb1/" onclick="openURLFromButton(this)">Super Mario Bros</button>
+    <button class="url-button" data-url="https://games.crazygames.com/en_US/mine-shooter---save-your-world/index.html?v=1.295" onclick="openURLFromButton(this)">Mine Shooter</button>
+    <button class="url-button" data-url="https://googlesnakemods.com/v/current/" onclick="openURLFromButton(this)">Google Snake</button>
     <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Slope</button>
     <button class="url-button" data-url="https://softbodytetris.netlify.app" onclick="openURLFromButton(this)">Sofybody Tetris</button>
     <button class="url-button" data-url="https://szhong.4399.com/4399swf//upload_swf/ftp35/liuxinyu/20210324/jj01/index.html" onclick="openURLFromButton(this)">Subway Surfers</button>
@@ -497,11 +501,6 @@ function loadWebsiteInNewTab(url) {
             <link rel="icon" href="${favicon}" type="image/x-icon">
             <meta charset="UTF-8">
             <title>${title}</title>
-
-        <div class="top-bar">
-            Announcement : This is a test lol don't worry.
-        </div>
-
             <style>
                 body {
                     margin: 0;
@@ -567,6 +566,32 @@ function loadWebsiteInNewTab(url) {
                     border-radius: 5px;
                     margin-bottom: 10px;
                 }
+
+        .announcement-evade {
+            position: absolute;
+            z-index: 9999
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
+            padding: 15px 30px;
+            border: 2px solid #ffcc00; /* Yellow border */
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            opacity: 1;
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+let zIndex = 10; // Initialize with a base value for z-index
+
+function bringToFront() {
+  const element = document.getElementById("announcement-evade");
+  element.style.zIndex = zIndex++;
+}
+
 
                 .toggle-btn {
                     padding: 5px 10px;
