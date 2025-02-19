@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  My Apps </title>
-    <div class="announcement-container">  
-        <div id="announcement-evade" class="announcement-evade">
-            Announcement : Should we praise the school for not suspending Tj?
-        </div> 
-        <button class="error-button">Version 2.5.0</button>
+    <div class="announcement-evade">
+        <div class="name-space">Jebunn | @FlowerBedJeb</div> <!-- Name will be displayed here -->
+        <div class="divider"></div>
+        <div class="message">Announcement : Kendal pls go back with Elisha</div>
+    </div>
+        <button class="error-button">Version 2.5.5</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
 <body>
@@ -90,21 +90,37 @@
 
         
         .announcement-evade {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
-            padding: 15px 30px;
-            border: 2px solid #ffcc00; /* Yellow border */
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            opacity: 1;
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
+    padding: 15px 30px;
+    border: 2px solid #00aafe; /* Yellow border */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    opacity: 1;
+    z-index: 1000;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    text-align: center;
+}
+
+.announcement-evade .divider {
+    width: 100%;
+    height: 2px;
+    background-color: #00aafe; /* Yellow divider line */
+    margin: 10px 0;
+}
+
+.announcement-evade .name-space {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00aafe; /* Yellow name text */
+}
+
    
         .fade-out {
             opacity: 0;
@@ -501,6 +517,11 @@ function loadWebsiteInNewTab(url) {
             <link rel="icon" href="${favicon}" type="image/x-icon">
             <meta charset="UTF-8">
             <title>${title}</title>
+    <div class="announcement-evade">
+        <div class="name-space">Jebunn | @FlowerBedJeb</div> <!-- Name will be displayed here -->
+        <div class="divider"></div>
+        <div class="message">Announcement : Kendal pls go back with Elisha</div>
+    </div>
             <style>
                 body {
                     margin: 0;
@@ -530,6 +551,44 @@ function loadWebsiteInNewTab(url) {
                     display: none;
                     color: white;
                 }
+
+        .announcement-evade {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
+    padding: 15px 30px;
+    border: 2px solid #00aafe; /* Yellow border */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    opacity: 1;
+    z-index: 1000;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    text-align: center;
+}
+
+.announcement-evade .divider {
+    width: 100%;
+    height: 2px;
+    background-color: #00aafe; /* Yellow divider line */
+    margin: 10px 0;
+}
+
+.announcement-evade .name-space {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00aafe; /* Yellow name text */
+}
+
+   
+        .fade-out {
+            opacity: 0;
+            transform: translateX(-100%) translateX(100%);
+        }
 
     .top-bar {
             position: fixed;
@@ -566,32 +625,6 @@ function loadWebsiteInNewTab(url) {
                     border-radius: 5px;
                     margin-bottom: 10px;
                 }
-
-        .announcement-evade {
-            position: absolute;
-            z-index: 9999
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
-            padding: 15px 30px;
-            border: 2px solid #ffcc00; /* Yellow border */
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            opacity: 1;
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-let zIndex = 10; // Initialize with a base value for z-index
-
-function bringToFront() {
-  const element = document.getElementById("announcement-evade");
-  element.style.zIndex = zIndex++;
-}
-
 
                 .toggle-btn {
                     padding: 5px 10px;
@@ -655,6 +688,20 @@ function bringToFront() {
             </div>
 
             <script>
+    setTimeout(() => {
+        let announcement = document.querySelector(".announcement-evade");
+        if (announcement) {
+            announcement.classList.add("fade-out");
+
+            // Remove element after fade-out completes (1s)
+            setTimeout(() => {
+                if (announcement) {
+                    announcement.style.display = "none";
+                }
+            }, 1000);
+        }
+    }, 10000);
+
                 document.addEventListener('DOMContentLoaded', function () {
                     let clockEnabled = true;
                     let fpsEnabled = true;
@@ -777,20 +824,19 @@ document.addEventListener("keydown", function(event) {
             }
         });
 
-        // Delay fade-out effect to prevent instant disappearance
         setTimeout(() => {
-            let announcement = document.getElementById("announcement-evade");
-            if (announcement) {
-                announcement.classList.add("fade-out");
-                
-                // OPTIONAL: Remove element after fade-out completes (1s)
-                setTimeout(() => {
-                    if (announcement) {
-                        announcement.style.display = "none";
-                    }
-                }, 1000);
-            }
-        }, 10000);
+        let announcement = document.querySelector(".announcement-evade");
+        if (announcement) {
+            announcement.classList.add("fade-out");
+
+            // Remove element after fade-out completes (1s)
+            setTimeout(() => {
+                if (announcement) {
+                    announcement.style.display = "none";
+                }
+            }, 1000);
+        }
+    }, 10000);
 
 
         // Delay fade-out effect to prevent instant disappearance
