@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -468,6 +469,7 @@
     <h2 class="section-header">Goguardian/Securly Bypassers | Private Links</h2>
     <h5 class="paragraph">This is for bypassing in a better way | information to fix issues below.</p>
     <div class="separator"></div>
+    <button class = "url-button" onclick="window.open('https:harlemmyking.mocha.compuinter.com/', '_blank')">Mochia</button>
     <button class="url-button" data-url="https://salemmiddleschoolclc.com.chickenkiller.com" onclick="openURLFromButton(this)">Space Proxy</button>
     <button class="url-button" data-url="https://light.simpanan.web.id" onclick="openURLFromButton(this)">Light Proxy</button>
 </div>
@@ -527,7 +529,7 @@ function loadWebsiteInNewTab(url) {
                     margin: 0;
                     overflow: hidden;
                     font-family: Roboto;
-                    background-color: black;
+                    background-color: white;
                 }
 
                 embed {
@@ -751,6 +753,12 @@ function loadWebsiteInNewTab(url) {
                         this.classList.toggle('enabled', clockEnabled);
                         document.getElementById('timeDisplay').style.display = clockEnabled ? 'inline' : 'none';
                     });
+
+document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.key === "z") {
+                window.location.href = "https://drive.google.com"; // Redirect to Google Drive
+            }
+        });
 
                     document.getElementById('toggleFPS').addEventListener('click', function () {
                         fpsEnabled = !fpsEnabled;
