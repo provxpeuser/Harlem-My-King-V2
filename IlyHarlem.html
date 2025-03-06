@@ -2,34 +2,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="icon/x-icon" href="https://a.espncdn.com/i/headshots/nba/players/full/1966.png" />
+    <link rel="icon" type="icon/x-icon" href="https://myapps.classlink.com/assets/images/classlink-logo.svg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lebron James</title>
+    <title>  My Apps </title>
     <div class="announcement-evade">
         <div class="name-space">TaleseOwnSagLock | @FlowerBedJeb</div>
         <div class="divider"></div>
-        <div class="message">Jayden You like this update? 💀</div>
+        <div class="message">Announcement : The update is now put in its beta phase so please tell me the bugs it has</div>
     </div>
-        <button class="error-button">Version 2.5.7</button>
+        <button class="error-button"> Version 3.0.0 Beta</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
 <body>
     <style>
 /*divider*/ 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-image: url('https://a.espncdn.com/i/headshots/nba/players/full/1966.png');
-            background-size: cover; /* Makes the image cover the entire screen */
-            background-position: center; /* Centers the image */
-            background-repeat: repeat; /* Prevents tiling */
-            height: 100vh; /* Ensures full viewport height */
-            margin: 0; 
-            color: white;
-            margin: 0;
-            padding: 0;
-            overflow-y: scroll;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to bottom, red, lightcoral);
+    background-size: 100% 300%; /* Ensures a smooth gradient transition over the height */
+    background-repeat: repeat-y; /* Repeats the gradient vertically */
+    background-position: top; /* Starts from the top */
+    height: 100vh; /* Ensures full viewport height */
+    margin: 0;
+    color: white;
+    padding: 0;
+    overflow-y: scroll;
+}
+
 
         #particleCanvas {
             position: absolute;
@@ -46,12 +46,23 @@
         }
 
         #openNewTabButton:hover, #resetButton:hover, #settingsButton:hover {
-            box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+            height: 100%;
+  width: 95px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: #ffffff;
+  font-weight: 500;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s;
+
         }
 
-        #openNewTabButton:active, #resetButton:active {
-            box-shadow: 0 0 15px #5dade2;
-        }
 
         #settingsMenu {
     display: none;
@@ -65,7 +76,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     width: 350px;
     text-align: left;
-    z-index: 1000; /* Higher z-index for better visibility */
+    z-index: 1000; 
     color: #fff;
     font-family: Arial, sans-serif;
     animation: fadeIn 0.3s ease-in-out;
@@ -218,6 +229,83 @@
             justify-content: center;
         }
 
+        .input-wrapper {
+  height: 45px;
+  border-radius: 20px;
+  padding: 5px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  background-color: #292524;
+}
+
+.input {
+  flex-grow: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  background-color: #292524;
+  color: white;
+  font-size: 1em;
+  border-radius: 20px;
+}
+
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #292524 inset;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.Subscribe-btn {
+  height: 100%;
+  width: 95px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: #ffffff;
+  font-weight: 500;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.Subscribe-btn:hover {
+  font-size: 77%;
+  transition: 300ms;
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.Subscribe-btn:active {
+  transform: scale(0.9);
+}
+
 
         .error-button {
             background-color: #E53935; /* Red background */
@@ -334,7 +422,87 @@
                 opacity: 0;
             }
         }
-
+        .card {
+            position: fixed;
+            width: 250px;
+            height: 120px;
+            background: #191414;
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 042904283;
+        }
+        .top {
+            display: flex;
+            gap: 10px;
+        }
+        .pfp {
+            height: 40px;
+            width: 40px;
+            background-color: #d2d2d2;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .title-1 {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .title-2 {
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .time {
+            width: 90%;
+            background-color: #5e5e5e;
+            height: 6px;
+            border-radius: 3px;
+            position: absolute;
+            left: 5%;
+            bottom: 22px;
+        }
+        .pfp {
+            height: 40px;
+            width: 40px;
+            border-radius: 5px;
+            background-image: url('https://i.pinimg.com/originals/ba/e6/ee/bae6ee176434ff2774808ad29de2a6e8.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .elapsed {
+            width: 0%;
+            background-color: #1db954;
+            height: 100%;
+            border-radius: 3px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .controls svg {
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .controls svg:hover {
+            fill: #1db954;
+        }
+        .timetext {
+            color: white;
+            font-size: 10px;
+            position: absolute;
+        }
+        .time_now {
+            bottom: 5px;
+            left: 10px;
+        }
+        .time_full {
+            bottom: 5px;
+            right: 10px;
+        }
         .blocked {
             background-color: rgba(0,0,0,0.5);
             color: rgb(0, 0, 0);
@@ -379,14 +547,41 @@
 </head>
 <body>
 
+    <div class="card">
+        <div class="top">
+            <div class="pfp"></div>
+            <div>
+                <div class="title-1">Chill Guy Theme</div>
+                <div class="title-2">Hinoki Wood</div>
+            </div>
+        </div>
+        <div class="time">
+            <div class="elapsed"></div>
+        </div>
+        <div class="timetext time_now">0:00</div>
+        <div class="timetext time_full">0:00</div>
+        <div class="controls">
+            <svg class="play" width="30" height="30" viewBox="0 0 24 24" fill="white">
+                <polygon points="8,5 19,12 8,19" />
+            </svg>
+            <svg class="pause" width="30" height="30" viewBox="0 0 24 24" fill="white" style="display: none;">
+                <rect x="6" y="5" width="5" height="14" />
+                <rect x="13" y="5" width="5" height="14" />
+            </svg>
+        </div>
+    </div>
+    <audio id="audio" src="https://raw.githubusercontent.com/provxpeuser/Harlem-My-King-V2/refs/heads/main/just%20a%20chill%20guy%20listening%20to%20chill%20guy%20music%20%5BTubeRipper.com%5D.m4a"></audio>
+
 <canvas id="particleCanvas"></canvas>
 
 <div style="text-align: center; margin-top: 60px; position: relative; z-index: 1;">
       <h1 class="page-title">❤👑Harlem My King 👑❤</h1>
       <h1 class="paragraph">Made by Jebunn | Still In Development!</p>
       <p class="paragraph"> </p>
-    <input type="text" id="urlInput" style="padding: 8px 15px; border-radius: 8px; border: none; background-color: #ffffff; color: rgb(0, 0, 0); width: 90%; box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.3);" placeholder="Enter a URL or search term">
+      <div class="input-wrapper">
+        <input type="text" id="urlInput" class="input" placeholder="Enter a URL or search term">    
     <button id="openNewTabButton" style="background-color: #d18282; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 -2px 0 rgba(0, 0, 0, 0.2);">Open</button>
+    </div>
     <button id="settingsButton" style="font-size: 1.5em; background-color: transparent; border: none; border-radius: 50%; cursor: pointer; color: white; padding: 8px; margin-left: 8px; transition: all 0.3s ease; transform: translateY(4px); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);">⚙️</button>
 
     <h5 class="paragraph">*Info and Debugging at the bottom*</h5>
@@ -422,10 +617,10 @@
     <h2 class="section-header">Goto Links</h2>
     <h5 class="paragraph">Links That most people use or need</p>
     <div class="separator"></div>
-    <button class="url-button" data-url="https://www.google.com/search?igu=1&q=" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://onecompiler.com/embed/html" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://www.desmos.com/testing/virginia/scientific" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class = "url-button" onclick="window.open('https:raw.githubusercontent.com/provxpeuser/IlyHarlemProxy/refs/heads/main/Updates.txt', '_blank')">Lebron James</button>
+    <button class="buttonsecurly" data-url="https://www.google.com/search?igu=1&q=" onclick="openURLFromButton(this)">Google</button>
+    <button class="url-button" data-url="https://onecompiler.com/embed/html" onclick="openURLFromButton(this)">HTML Compiler</button>
+    <button class="url-button" data-url="https://www.desmos.com/testing/virginia/scientific" onclick="openURLFromButton(this)">Desmos Scientific Calculator</button>
+    <button class = "url-button" onclick="window.open('https:raw.githubusercontent.com/provxpeuser/IlyHarlemProxy/refs/heads/main/Updates.txt', '_blank')">Updates</button>
     <button class="url-panic">Panic</button>
 
 
@@ -435,60 +630,51 @@
     <h2 class="section-header">Games</h2>
     <h5 class="paragraph">An Great Asortment of games that are fun when needed to waste time. "Thanks to the Space Proxy for most of these links"</p>
     <div class="separator"></div>
-    <button class="url-button" data-url="https://deadshot.io" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://slowroads.io" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://html5.gamedistribution.com/0c454c9562d249d28ba3a2b50564042c/?timestamp=1713731659&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-7" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://probablykam.github.io/Mario64webgl/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://3kh0-assets.silvereen.net/3kh0-assets/ball-dodge" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://helixjumponline.com/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://jcw87.github.io/c2-smb1/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://games.crazygames.com/en_US/mine-shooter---save-your-world/index.html?v=1.295" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://googlesnakemods.com/v/current/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Lebron James</button>
+    <button class="url-button" data-url="https://deadshot.io" onclick="openURLFromButton(this)">Deadshot</button>
+    <button class="url-button" data-url="https://slowroads.io" onclick="openURLFromButton(this)">Slowroads</button>
+    <button class="url-button" data-url="https://html5.gamedistribution.com/0c454c9562d249d28ba3a2b50564042c/?timestamp=1713731659&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-7" onclick="openURLFromButton(this)">Vex 7</button>
+    <button class="url-button" data-url="https://probablykam.github.io/Mario64webgl/" onclick="openURLFromButton(this)">Super Mario 64</button>
+    <button class="url-button" data-url="https://3kh0-assets.silvereen.net/3kh0-assets/ball-dodge" onclick="openURLFromButton(this)">Ball Dodge</button>
+    <button class="url-button" data-url="https://helixjumponline.com/" onclick="openURLFromButton(this)">Helix Jump</button>
+    <button class="url-button" data-url="https://jcw87.github.io/c2-smb1/" onclick="openURLFromButton(this)">Super Mario Bros</button>
+    <button class="url-button" data-url="https://games.crazygames.com/en_US/mine-shooter---save-your-world/index.html?v=1.295" onclick="openURLFromButton(this)">Mine Shooter</button>
+    <button class="url-button" data-url="https://googlesnakemods.com/v/current/" onclick="openURLFromButton(this)">Google Snake</button>
+    <button class="url-button" data-url="https://slope-c.glitch.me/" onclick="openURLFromButton(this)">Slope</button>
     <button class="url-button" data-url="https://softbodytetris.netlify.app" onclick="openURLFromButton(this)">Sofybody Tetris</button>
-    <button class="url-button" data-url="https://szhong.4399.com/4399swf//upload_swf/ftp35/liuxinyu/20210324/jj01/index.html" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://www.hoodamath.com/mobile/games/drift-boss/game.html" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://games.cdn.famobi.com/html5games/c/cut-the-rope/v070/?fg_domain=play.famobi.com&fg_aid=A-SILVERGAMES&fg_uid=4531b37c-a8e0-4a67-9ebd-e8d3190b6277&fg_pid=8a24e5f2-94a8-4593-b4e5-81cc68f524c8&fg_beat=969&original_ref=https%3A%2F%2Fwww.silvergames.com%2F" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://www.2048.org/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="buttonsecurly" data-url="https://bab.dev/flappy-bird" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="buttonsecurly" data-url="https://1kh0.github.io/projects/retro-bowl/index.html" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="buttonsecurly" data-url="https://bab.dev/blockblast" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="buttonsecurly" data-url="https://bab.dev" onclick="openURLFromButton(this)">Lebron James</button>
+    <button class="url-button" data-url="https://szhong.4399.com/4399swf//upload_swf/ftp35/liuxinyu/20210324/jj01/index.html" onclick="openURLFromButton(this)">Subway Surfers</button>
+    <button class="url-button" data-url="https://www.hoodamath.com/mobile/games/drift-boss/game.html" onclick="openURLFromButton(this)">Drift Boss</button>
+    <button class="buttonsecurly" data-url="https://games.cdn.famobi.com/html5games/c/cut-the-rope/v070/?fg_domain=play.famobi.com&fg_aid=A-SILVERGAMES&fg_uid=4531b37c-a8e0-4a67-9ebd-e8d3190b6277&fg_pid=8a24e5f2-94a8-4593-b4e5-81cc68f524c8&fg_beat=969&original_ref=https%3A%2F%2Fwww.silvergames.com%2F" onclick="openURLFromButton(this)">Cut The Rope</button>
+    <button class="url-button" data-url="https://www.2048.org/" onclick="openURLFromButton(this)">2048</button>
+    <button class="buttonsecurly" data-url="https://bab.dev/flappy-bird" onclick="openURLFromButton(this)">Flappy Bird</button>
+    <button class="buttonsecurly" data-url="https://1kh0.github.io/projects/retro-bowl/index.html" onclick="openURLFromButton(this)">Retro Bowl</button>
+    <button class="buttonsecurly" data-url="https://bab.dev/blockblast" onclick="openURLFromButton(this)">Block Blast</button>
+    <button class="buttonsecurly" data-url="https://bab.dev" onclick="openURLFromButton(this)">Bab.Dev</button>
     </Div>
     <div style="text-align: center; margin-top: 40px;">
         <h2 class="section-header">Ovo Versions</h2>
         <h5 class="paragraph">Modded and other vesrsions of Ovo</p>
-    <button class="url-button" data-url="https://ovo-5yu.pages.dev/versions/1.4.4b/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://ovo-5yu.pages.dev/versions/doublejump/" onclick="openURLFromButton(this)">Lebron James</button>
+    <button class="url-button" data-url="https://ovo-5yu.pages.dev/versions/1.4.4b/" onclick="openURLFromButton(this)">OvO Classic</button>
+    <button class="url-button" data-url="https://ovo-5yu.pages.dev/versions/doublejump/" onclick="openURLFromButton(this)">OvO Double Jump</button>
 </div>
 
     <div style="text-align: center; margin-top: 40px;">
         <h2 class="section-header">Io Games</h2>
         <h5 class="paragraph">Games made for the internet and for phones that can work ofline.</p>
-            <button class="buttonsecurly" data-url="https://1v1.lol/" onclick="openURLFromButton(this)">Lebron James</button>
-            <button class="buttonsecurly" data-url="https://hole-io.com" onclick="openURLFromButton(this)">Lebron James</button>
-            <button class="buttonsecurly" data-url="https://kour.io" onclick="openURLFromButton(this)">Lebron James</button>
-            <button class="buttonsecurly" data-url="https://slither.io" onclick="openURLFromButton(this)">Lebron James</button>
-            <button class="buttonsecurly" data-url="https://snowball-io.io" onclick="openURLFromButton(this)">Lebron James</button>
-            <button class="buttonsecurly" data-url="https://paper-io.com/" onclick="openURLFromButton(this)">Lebron James </button>
+            <button class="buttonsecurly" data-url="https://1v1.lol/" onclick="openURLFromButton(this)">1v1.lol</button>
+            <button class="buttonsecurly" data-url="https://hole-io.com" onclick="openURLFromButton(this)">Hole.io</button>
+            <button class="buttonsecurly" data-url="https://kour.io" onclick="openURLFromButton(this)">Kour.io</button>
+            <button class="buttonsecurly" data-url="https://slither.io" onclick="openURLFromButton(this)">Slither.io</button>
+            <button class="buttonsecurly" data-url="https://snowball-io.io" onclick="openURLFromButton(this)">Snowball.io</button>
+            <button class="buttonsecurly" data-url="https://paper-io.com/" onclick="openURLFromButton(this)">Paper.io </button>
         </div>
     
 <div style="text-align: center; margin-top: 40px;">
     <h2 class="section-header">Minecraft</h2>
     <h5 class="paragraph">This is part of games and it is the eaglercraft part of games</p>
-        <button class="buttonsecurly" data-url="https://eaglercraft.com" onclick="openURLFromButton(this)">Lebron Jamest</button>
-        <button class="url-button" data-url="https://html-classic.itch.zone/html/7086310/PrecisionClient-Static-main/index.html" onclick="openURLFromButton(this)">Lebron James</button>
-        <button class="url-button" data-url="https://resent4-0.vercel.app/" onclick="openURLFromButton(this)">Lebron James</button>
+        <button class="buttonsecurly" data-url="https://eaglercraft.com" onclick="openURLFromButton(this)">Eaglercraft</button>
+        <button class="url-button" data-url="https://html-classic.itch.zone/html/7086310/PrecisionClient-Static-main/index.html" onclick="openURLFromButton(this)">Precision Client</button>
+        <button class="url-button" data-url="https://resent4-0.vercel.app/" onclick="openURLFromButton(this)">Resent 4.0</button>
     <div class="separator"></div>
-</div>
-
-<div style="text-align: center; margin-top: 40px;">
-    <h2 class="section-header">Goguardian/Securly Bypassers | Private Links</h2>
-    <h5 class="paragraph">This is for bypassing in a better way | information to fix issues below.</p>
-    <div class="separator"></div>
-    <button class="url-button" data-url="https:harlemmyking.mocha.compuinter.com/" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://salemmiddleschoolclc.com.chickenkiller.com" onclick="openURLFromButton(this)">Lebron James</button>
-    <button class="url-button" data-url="https://light.simpanan.web.id" onclick="openURLFromButton(this)">Lebron James</button>
 </div>
 
 <div style="text-align: center; margin-top: 40px;">
@@ -507,6 +693,9 @@
   
 <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>
+
+
+
 let currentSearchEngine = "google";
 let particlesEnabled = true;
 
@@ -524,283 +713,287 @@ function openURLFromButton(button) {
     loadWebsiteInNewTab(url);
 }
 
+const audio = document.getElementById("audio");
+        const playBtn = document.querySelector(".play");
+        const pauseBtn = document.querySelector(".pause");
+        const elapsed = document.querySelector(".elapsed");
+        const timeNow = document.querySelector(".time_now");
+        const timeFull = document.querySelector(".time_full");
+
+        playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline";
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            audio.pause();
+            playBtn.style.display = "inline";
+            pauseBtn.style.display = "none";
+        });
+
+        audio.addEventListener("loadedmetadata", () => {
+            timeFull.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener("timeupdate", () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            elapsed.style.width = `${progress}%`;
+            timeNow.textContent = formatTime(audio.currentTime);
+        });
+
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+        }
+
 function loadWebsiteInNewTab(url) {
     const title = 'Home - Google Drive';
     const favicon = 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png';
     const newTab = window.open();
 
     const pageContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="icon" href="https://a.espncdn.com/i/headshots/nba/players/full/1966.png" type="image/x-icon">
-            <meta charset="UTF-8">
-            <title>Lebron James</title>
-<!--    <div class="announcement-evade">
-        <div class="name-space">Jebunn | @FlowerBedJeb</div> 
-        <div class="divider"></div>
-        <div class="message">Announcement : Kendal pls go back with Elisha</div> -->
-    </div>
-            <style>
-                body {
-                    margin: 0;
-                    overflow: hidden;
-                    font-family: Roboto;
-                    background-color: white;
-                }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Google Drive</title>
+    <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+        }
 
-                Embed {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                }
+        .viewer-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-                #settingsMenu {
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 400px; /* Increased size */
-                    background: rgba(0, 0, 0, 0.9);
-                    border-radius: 10px;
-                    padding: 30px;
-                    display: none;
-                    color: white;
-                }
+        embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-        .announcement-evade {
-    position: fixed;
-    top: 20px;
+.url-bar {
+    position: absolute;
+    top: 6px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Translucent black */
-    padding: 15px 30px;
-    border: 2px solid #00aafe; /* Yellow border */
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 17px;
     font-weight: bold;
-    color: white;
-    opacity: 1;
-    z-index: 1000;
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    text-align: center;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.announcement-evade .divider {
-    width: 100%;
-    height: 2px;
-    background-color: #00aafe; /* Yellow divider line */
-    margin: 10px 0;
-}
 
-.announcement-evade .name-space {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00aafe; /* Yellow name text */
-}
-
-   
-        .fade-out {
-            opacity: 0;
-            transform: translateX(-100%) translateX(100%);
+        .url-bar span {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
         }
 
-    .top-bar {
+        .ui-box {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background-color: black;
+            top: 555px;
+            right: 24px;
+            background: rgba(211, 47, 47, 0.9);
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            z-index: 1000;
-            transition: opacity 0.5s ease-in-out;
-        }   
-
-                .close-btn {
-                    background: red;
-                    border: none;
-                    padding: 10px;
-                    color: white;
-                    cursor: pointer;
-                    border-radius: 5px;
-                    width: 100%;
-                }
-
-                .setting-item {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 10px;
-                    background: #222;
-                    border-radius: 5px;
-                    margin-bottom: 10px;
-                }
-
-                .toggle-btn {
-                    padding: 5px 10px;
-                    border: none;
-                    cursor: pointer;
-                    border-radius: 5px;
-                }
-
-                .enabled {
-                    background: green;
-                    color: white;
-                }
-
-                /* UI Box (Draggable) */
-                .ui-box {
-                    position: fixed;
-                    top: 555px;
-                    right: 24px;
-                    background: rgba(211, 47, 47, 0.9);
-                    color: white;
-                    padding: 10px;
-                    border-radius: 5px;
-                    font-size: 14px;
-                    cursor: grab;
-                    box-shadow: 0 0 10px rgba(211, 47, 47, 0.8);
-                    transition: transform 0.2s ease-in-out;
-                }
-                .ui-box:active {
-                    transform: scale(0.95);
-                }
-    </\Style>
-        </head>
-        <body>
-            <Embed id="EmbeddedPage" src="https://a.espncdn.com/i/headshots/nba/players/full/1966.pngf">
-
-            <div class="ui-box" id="uiBox">
-                <span id="timeDisplay"></span> |
-                <span id="fpsCounter"></span> |
-                <span id="pingCounter"></span>
-            </div>
-
-            <div id="settingsMenu">
-                <h2>👑Harlem My King👑 | Mod Menu</h2>
-                <div class="setting-item">
-                    <span>Enable Clock</span>
-                    <button id="toggleClock" class="toggle-btn enabled">Enabled</button>
-                </div>
-                <div class="setting-item">
-                    <span>Enable FPS Counter</span>
-                    <button id="toggleFPS" class="toggle-btn enabled">Enabled</button>
-                </div>
-                <div class="setting-item">
-                    <span>Enable Ping Counter</span>
-                    <button id="togglePing" class="toggle-btn enabled">Enabled</button>
-                </div>
-                <div class="setting-item">
-                    <span>Move UI Box</span>
-                    <button id="moveUiBox" class="toggle-btn">Enable Drag</button>
-                </div>
-                <button class="close-btn">Close</button>
-            </div>
-
-<script src="https://cdn.jsdelivr.net/npm/eruda"></\script>
-            <script>
-    setTimeout(() => {
-        let announcement = document.querySelector(".announcement-evade");
-        if (announcement) {
-            announcement.classList.add("fade-out");
-
-            // Remove element after fade-out completes (1s)
-            setTimeout(() => {
-                if (announcement) {
-                    announcement.style.display = "none";
-                }
-            }, 1000);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: grab;
+            box-shadow: 0 0 10px rgba(211, 47, 47, 0.8);
+            transition: transform 0.2s ease-in-out;
         }
-    }, 10000);
-                document.addEventListener('DOMContentLoaded', function () {
-                    let clockEnabled = true;
-                    let fpsEnabled = true;
-                    let pingEnabled = true;
-                    let moveUiEnabled = false;
-                    let settingsMenu = document.getElementById('settingsMenu');
-                    let uiBox = document.getElementById('uiBox');
 
-                    function updateTime() {
-                        if (clockEnabled) {
-                            const now = new Date();
-                            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString();
-                        }
-                    }
-                    setInterval(updateTime, 1000);
-                    updateTime();
+        #settingsMenu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            display: none;
+            z-index: 2000;
+        }
 
-                    let lastLoop = performance.now();
-                    function updateFPS() {
-                        const thisLoop = performance.now();
-                        const fps = Math.round(1000 / (thisLoop - lastLoop));
-                        lastLoop = thisLoop;
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #222;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-                        if (fpsEnabled) {
-                            document.getElementById('fpsCounter').textContent = 'FPS: ' + fps;
-                        }
-                    }
-                    setInterval(updateFPS, 15);
+        .toggle-btn {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-                    function updatePing() {
-                        if (!pingEnabled) return;
-                        const start = performance.now();
-                        fetch('https://www.google.com', { mode: 'no-cors' })
-                            .then(() => {
-                                const ping = Math.round(performance.now() - start);
-                                document.getElementById('pingCounter').textContent = 'Ping: ' + ping + ' ms';
-                            })
-                            .catch(() => {
-                                document.getElementById('pingCounter').textContent = 'Ping: N/A';
-                            });
-                    }
-                    setInterval(updatePing, 1000);
+        .enabled {
+            background: green;
+            color: white;
+        }
 
-                    document.getElementById('toggleClock').addEventListener('click', function () {
-                        clockEnabled = !clockEnabled;
-                        this.textContent = clockEnabled ? 'Enabled' : 'Disabled';
-                        this.classList.toggle('enabled', clockEnabled);
-                        document.getElementById('timeDisplay').style.display = clockEnabled ? 'inline' : 'none';
-                    });
+        .close-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: red;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
 
-document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey && event.key === "z") {
-                window.location.href = "https://drive.google.com"; // Redirect to Google Drive
-            }
+        .close-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+<div class="viewer-container">
+    <embed id="EmbeddedPage" src="https://www.google.com"></embed>
+</div>
+
+    <div class="url-bar">
+        <span id="urlText"></span>
+    </div>
+
+<div class="ui-box" id="uiBox">
+    <span id="timeDisplay"></span> |
+    <span id="fpsCounter"></span> |
+    <span id="pingCounter"></span>
+</div>
+
+<div id="settingsMenu">
+    <h2>👑 Harlem My King 👑 | Mod Menu</h2>
+    <div class="setting-item">
+        <span>Enable Clock</span>
+        <button id="toggleClock" class="toggle-btn enabled">Enabled</button>
+    </div>
+    <div class="setting-item">
+        <span>Enable FPS Counter</span>
+        <button id="toggleFPS" class="toggle-btn enabled">Enabled</button>
+    </div>
+    <div class="setting-item">
+        <span>Enable Ping Counter</span>
+        <button id="togglePing" class="toggle-btn enabled">Enabled</button>
+    </div>
+    <div class="setting-item">
+        <span>Show URL Bar</span>
+        <button id="toggleUrlBar" class="toggle-btn enabled">Enabled</button>
+    </div>
+    <div class="setting-item">
+        <span>Move UI Box</span>
+        <button id="moveUiBox" class="toggle-btn">Enable Drag</button>
+    </div>
+    <button class="close-btn" id="closeMenu">Close</button>
+</div>
+
+<script>
+    let url = "${url}";
+    document.getElementById("urlText").textContent = url;
+    document.getElementById("EmbeddedPage").src = url;
+
+    let clockEnabled = true;
+    let fpsEnabled = true;
+    let pingEnabled = true;
+    let moveUiEnabled = false;
+    let settingsMenu = document.getElementById('settingsMenu');
+    let uiBox = document.getElementById('uiBox');
+
+    function updateTime() {
+        if (clockEnabled) {
+            const now = new Date();
+            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString();
+        }
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    let lastLoop = performance.now();
+    function updateFPS() {
+        const thisLoop = performance.now();
+        const fps = Math.round(1000 / (thisLoop - lastLoop));
+        lastLoop = thisLoop;
+
+        if (fpsEnabled) {
+            document.getElementById('fpsCounter').textContent = 'FPS: ' + fps;
+        }
+    }
+    setInterval(updateFPS, 15);
+
+    function updatePing() {
+        if (!pingEnabled) return;
+        const start = performance.now();
+        fetch('https://www.google.com', { mode: 'no-cors' })
+            .then(() => {
+                const ping = Math.round(performance.now() - start);
+                document.getElementById('pingCounter').textContent = 'Ping: ' + ping + ' ms';
+            })
+            .catch(() => {
+                document.getElementById('pingCounter').textContent = 'Ping: N/A';
+            });
+    }
+    setInterval(updatePing, 1000);
+
+    document.getElementById('toggleClock').addEventListener('click', function () {
+        clockEnabled = !clockEnabled;
+        this.textContent = clockEnabled ? 'Enabled' : 'Disabled';
+        this.classList.toggle('enabled', clockEnabled);
+        document.getElementById('timeDisplay').style.display = clockEnabled ? 'inline' : 'none';
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let urlBarEnabled = true;
+
+        document.getElementById('toggleFPS').addEventListener('click', function () {
+            fpsEnabled = !fpsEnabled;
+            this.textContent = fpsEnabled ? 'Enabled' : 'Disabled';
+            this.classList.toggle('enabled', fpsEnabled);
+            document.getElementById('fpsCounter').style.display = fpsEnabled ? 'inline' : 'none';
         });
 
-                    document.getElementById('toggleFPS').addEventListener('click', function () {
-                        fpsEnabled = !fpsEnabled;
-                        this.textContent = fpsEnabled ? 'Enabled' : 'Disabled';
-                        this.classList.toggle('enabled', fpsEnabled);
-                        document.getElementById('fpsCounter').style.display = fpsEnabled ? 'inline' : 'none';
-                    });
+        document.getElementById('togglePing').addEventListener('click', function () {
+            pingEnabled = !pingEnabled;
+            this.textContent = pingEnabled ? 'Enabled' : 'Disabled';
+            this.classList.toggle('enabled', pingEnabled);
+            document.getElementById('pingCounter').style.display = pingEnabled ? 'inline' : 'none';
+        });
 
-                    document.getElementById('togglePing').addEventListener('click', function () {
-                        pingEnabled = !pingEnabled;
-                        this.textContent = pingEnabled ? 'Enabled' : 'Disabled';
-                        this.classList.toggle('enabled', pingEnabled);
-                        document.getElementById('pingCounter').style.display = pingEnabled ? 'inline' : 'none';
-                    });
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            settingsMenu.style.display = 'none';
+        });
 
-                    document.querySelector('.close-btn').addEventListener('click', function () {
-                        settingsMenu.style.display = 'none';
-                    });
-
-                    document.addEventListener('keydown', function (event) {
-                        if (event.code === 'ShiftRight') {
-                            settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
-                        }
-                    });
+        document.getElementById('toggleUrlBar').addEventListener('click', function () {
+            urlBarEnabled = !urlBarEnabled;
+            this.textContent = urlBarEnabled ? 'Enabled' : 'Disabled';
+            this.classList.toggle('enabled', urlBarEnabled);
+            document.querySelector('.url-bar').style.display = urlBarEnabled ? 'block' : 'none';
+        });
 
                     // Move UI Box
                     document.getElementById('moveUiBox').addEventListener('click', function () {
@@ -833,25 +1026,36 @@ document.addEventListener("keydown", function(event) {
                         } else {
                             uiBox.onmousedown = null;
                         }
+        });
+
+                    document.addEventListener('keydown', function (event) {
+                        if (event.code === 'ShiftRight') {
+                            settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+                        }
                     });
-                });
-  eruda.init();
-            </\script>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="icon" href="${favicon}" type="image/x-icon">
-            <meta charset="UTF-8">
-            <title>${title}</title>
-        </body>
-        </html>
+
+        document.getElementById('closeMenu').addEventListener('click', function () {
+            document.getElementById('settingsMenu').style.display = 'none';
+        });
+    });
+</\script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Google Drive</title>
+    <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png" type="image/x-icon">
+</body>
+</html>
+
     `;
 
     newTab.document.write(pageContent);
     newTab.document.close();
 }
 
+
 document.addEventListener("keydown", function(event) {
             if (event.ctrlKey && event.key === "z") {
-                window.location.href = "https://drive.google.com"; // Redirect to Google Drive
+                window.location.href = "https://myapps.classlink.com/home"; // Redirect to Google Drive
             }
         });
 
