@@ -9,7 +9,7 @@
     <div class="announcement-evade">
         <div class="name-space">TaleseOwnSagLock | @FlowerBedJeb</div>
         <div class="divider"></div>
-        <div class="message">Announcement : The update is now put in its beta phase so please tell me the bugs it has</div>
+        <div class="message">Announcement : Hey Guys, so the proxy does not support some links because of a thing called the kors policy. We can't add wss aswell for some reason because of the itinerary that disables securly so yeah.</div>
     </div>
         <button class="error-button"> Version 3.0.0 Beta</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
@@ -19,6 +19,8 @@
 /*divider*/ 
 body {
     font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: flex-start;
     background-image: linear-gradient(to bottom, red, lightcoral);
     background-size: 100% 300%; /* Ensures a smooth gradient transition over the height */
     background-repeat: repeat-y; /* Repeats the gradient vertically */
@@ -29,6 +31,7 @@ body {
     padding: 0;
     overflow-y: scroll;
 }
+
 
 
         #particleCanvas {
@@ -424,8 +427,9 @@ body {
         }
         .card {
             position: fixed;
+            right: 10px;
             width: 250px;
-            height: 120px;
+            height: 110px;
             background: #191414;
             border-radius: 10px;
             padding: 10px;
@@ -499,6 +503,7 @@ body {
             bottom: 5px;
             left: 10px;
         }
+
         .time_full {
             bottom: 5px;
             right: 10px;
@@ -523,6 +528,8 @@ body {
             margin-right: auto;
         }
 
+
+        
         .section-header {
             font-size: 1.5em;
             color: white;
@@ -540,6 +547,52 @@ body {
             color: white;
             margin-top: 2.5px;
             margin-bottom: 5px;
+        }
+
+        .container {
+            position: fixed;
+            left: 35%;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            border: 2px solid #555;
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            color: #FFC770;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 538503485035340953409583405;
+        }
+        .tite {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(to top, #D88C50, #FFC770);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .content b {
+            color: #FFC770;
+        }
+        .exit-button {
+            margin-top: 20px;
+            background: linear-gradient(to bottom, #a52a2a, #8b0000);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .exit-button:hover {
+            background: linear-gradient(to bottom, #8b0000, #a52a2a);
         }
 
     </style>
@@ -573,6 +626,19 @@ body {
     <audio id="audio" src="https://raw.githubusercontent.com/provxpeuser/Harlem-My-King-V2/refs/heads/main/just%20a%20chill%20guy%20listening%20to%20chill%20guy%20music%20%5BTubeRipper.com%5D.m4a"></audio>
 
 <canvas id="particleCanvas"></canvas>
+
+
+<!--<div class="container" id="container">
+    <div class="tite">Legacy Evade</div>
+    <div class="content">
+        <b>NOTE</b>
+        <p>• Some websites like tiktok don't work because of the Kors policy so please don't tell me about it.</p>
+        <b></b>
+        <b></b>
+        <b></b>
+    </div>
+    <button class="exit-button" onclick="closeContainer()">Exit</button>
+   </div> ---> 
 
 <div style="text-align: center; margin-top: 60px; position: relative; z-index: 1;">
       <h1 class="page-title">❤👑Harlem My King 👑❤</h1>
@@ -694,7 +760,10 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>
 
-
+        function closeContainer() {
+            var container = document.getElementById("container");
+            container.remove(); // This will delete the container when the button is clicked
+        }
 
 let currentSearchEngine = "google";
 let particlesEnabled = true;
@@ -766,7 +835,12 @@ function loadWebsiteInNewTab(url) {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #000;
+    background-image: linear-gradient(to bottom, red, lightcoral);
+    background-size: 100% 300%; /* Ensures a smooth gradient transition over the height */
+    background-repeat: repeat-y; /* Repeats the gradient vertically */
+    background-position: top; /* Starts from the top */
+    height: 100vh; /* Ensures full viewport height */
+    margin: 0;
         }
 
         .viewer-container {
