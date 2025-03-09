@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Loader</title>
+    <link id="favicon" rel="icon" type="image/png" href="https://www.google.com/favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        iframe {
+            width: 90%;
+            height: 500px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Harlem My King Lite</h2>
+    <input type="text" id="urlInput" placeholder="Enter website URL (e.g. https://example.com)">
+    <button onclick="loadIframe()">Load</button>
+    <button onclick="openFullscreen()">Fullscreen</button>
+    <button onclick="openSettings()">Settings</button>
+    <br>
+    <iframe id="iframeDisplay"></iframe>
+
+    <script>
+        let pageTitle = "Iframe Loader";  // Default title
+        let pageFavicon = "https://www.google.com/favicon.ico"; // Default favicon
+
+        function getFormattedURL() {
+            let url = document.getElementById("urlInput").value.trim();
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                url = "https://" + url;
+            }
+            return url;
+        }
+
+        function loadIframe() {
+            document.getElementById("iframeDisplay").src = getFormattedURL();
+        }
+
+        function openFullscreen() {
+            const url = getFormattedURL();
+            const newTab = window.open("about:blank", "_blank");
+            if (newTab) {
+                newTab.document.write(`
+                    <html>
+                    <head>
+                        <title>${pageTitle}</title>
+                        <link rel="icon" type="image/png" href="${pageFavicon}">
+                        <style>body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden}</style>
+                    </head>
+                    <body>
+                        <iframe src="${url}" style="width:100vw; height:100vh; border:none;"></iframe>
+                    </body>
+                    </html>
+                `);
+                newTab.document.close();
+            } else {
+                alert("Popup blocked! Allow pop-ups for this site.");
+            }
+        }
+
+        function openSettings() {
+            const newTitle = prompt("Enter a new title for the page:", pageTitle);
+            if (newTitle) {
+                pageTitle = newTitle;
+                document.title = pageTitle;
+            }
+
+            const newFavicon = prompt("Enter a URL for the new favicon:", pageFavicon);
+            if (newFavicon) {
+                pageFavicon = newFavicon;
+                let faviconElement = document.getElementById("favicon");
+                if (!faviconElement) {
+                    faviconElement = document.createElement("link");
+                    faviconElement.id = "favicon";
+                    faviconElement.rel = "icon";
+                    faviconElement.type = "image/png";
+                    document.head.appendChild(faviconElement);
+                }
+                faviconElement.href = pageFavicon;
+            }
+        }
+    </script>
+</body>
+</html>
