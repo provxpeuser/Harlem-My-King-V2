@@ -43,29 +43,13 @@ body {
             z-index: 0; /* Canvas is at the back */
         }
 
-        #urlInput:focus, #titleInput:focus, #faviconInput:focus {
-            outline: none;
-            box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.3);
-        }
-
         #openNewTabButton:hover, #resetButton:hover, #settingsButton:hover {
-            height: 100%;
-  width: 95px;
-  border: none;
-  border-radius: 15px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  background-color: #ffffff;
-  font-weight: 500;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: all 0.3s;
-
+            box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
         }
 
+        #openNewTabButton:active, #resetButton:active {
+            box-shadow: 0 0 15px #5dade2;
+        }
 
         #settingsMenu {
     display: none;
@@ -629,9 +613,10 @@ body {
       <div class="input-wrapper">
         <input type="text" id="urlInput" class="input" placeholder="Enter a URL or search term">    
     <button id="openNewTabButton" style="background-color: #d18282; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 -2px 0 rgba(0, 0, 0, 0.2);">Open</button>
-    </div>
+</div>
+<div style="text-align: center; margin-top: 2px; position: relative; z-index: 1;">
     <button id="settingsButton" style="font-size: 1.5em; background-color: transparent; border: none; border-radius: 50%; cursor: pointer; color: white; padding: 8px; margin-left: 8px; transition: all 0.3s ease; transform: translateY(4px); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);">⚙️</button>
-
+      </div>
     <h5 class="paragraph">*Info and Debugging at the bottom*</h5>
     <h5 class="paragraph">This website is private and if this site has been leaked it will be blocked and currently this website is only given to only 4 people including me.</h5>
     <h5 class="paragraph">Link has been given to Harlem, Aj, Jayden, Michael, Griffin, Collin and Leo</h5>
