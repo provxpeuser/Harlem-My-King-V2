@@ -427,53 +427,42 @@ body {
         }
         .card {
             position: fixed;
-            right: 10px;
+            top: 10px;
+            right: 5px;
             width: 250px;
-            height: 110px;
+            height: 115px;
             background: #191414;
             border-radius: 10px;
             padding: 10px;
-            z-index: 042904283;
+            text-align: center;
+            z-index: 900000;
         }
         .top {
             display: flex;
+            align-items: center;
             gap: 10px;
         }
         .pfp {
             height: 40px;
             width: 40px;
-            background-color: #d2d2d2;
             border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-size: cover;
+            background-position: center;
         }
-        .title-1 {
+        .title-1, .title-2 {
             color: white;
-            font-size: 20px;
-            font-weight: bold;
+            margin: 0;
         }
-        .title-2 {
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-        }
+        .title-1 { font-size: 16px; font-weight: bold; }
+        .title-2 { font-size: 12px; font-weight: normal; }
         .time {
             width: 90%;
             background-color: #5e5e5e;
             height: 6px;
             border-radius: 3px;
-            position: absolute;
-            left: 5%;
-            bottom: 22px;
-        }
-        .pfp {
-            height: 40px;
-            width: 40px;
-            border-radius: 5px;
-            background-image: url('https://i.pinimg.com/originals/ba/e6/ee/bae6ee176434ff2774808ad29de2a6e8.jpg');
-            background-size: cover;
-            background-position: center;
+            margin: 10px auto;
+            cursor: pointer;
+            position: relative;
         }
         .elapsed {
             width: 0%;
@@ -483,30 +472,25 @@ body {
         }
         .controls {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 10px;
         }
         .controls svg {
             cursor: pointer;
-            transition: 0.1s;
+            fill: white;
+            width: 25px;
+            height: 25px;
         }
         .controls svg:hover {
             fill: #1db954;
         }
-        .timetext {
+        .time-text {
             color: white;
             font-size: 10px;
-            position: absolute;
-        }
-        .time_now {
-            bottom: 5px;
-            left: 10px;
-        }
-
-        .time_full {
-            bottom: 5px;
-            right: 10px;
+            margin-top: -5px;
+            display: flex;
+            justify-content: space-between;
         }
         .blocked {
             background-color: rgba(0,0,0,0.5);
@@ -604,28 +588,26 @@ body {
         <div class="top">
             <div class="pfp"></div>
             <div>
-                <div class="title-1">Chill Guy Theme</div>
-                <div class="title-2">Hinoki Wood</div>
+                <p class="title-1">Song Name</p>
+                <p class="title-2">Artist Name</p>
             </div>
         </div>
-        <div class="time">
+        <div class="time" onclick="seek(event)">
             <div class="elapsed"></div>
         </div>
-        <div class="timetext time_now">0:00</div>
-        <div class="timetext time_full">0:00</div>
+        <div class="time-text">
+            <span class="current-time">0:00</span>
+            <span class="total-time">0:00</span>
+        </div>
         <div class="controls">
-            <svg class="play" width="30" height="30" viewBox="0 0 24 24" fill="white">
-                <polygon points="8,5 19,12 8,19" />
-            </svg>
-            <svg class="pause" width="30" height="30" viewBox="0 0 24 24" fill="white" style="display: none;">
-                <rect x="6" y="5" width="5" height="14" />
-                <rect x="13" y="5" width="5" height="14" />
-            </svg>
+            <svg onclick="prevSong()" viewBox="0 0 24 24"><polygon points="6,12 18,5 18,19"></polygon></svg>
+            <svg class="play" onclick="togglePlay()" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg>
+            <svg class="pause" onclick="togglePlay()" viewBox="0 0 24 24" style="display: none;"><rect x="6" y="5" width="5" height="14"></rect><rect x="13" y="5" width="5" height="14"></rect></svg>
+            <svg onclick="nextSong()" viewBox="0 0 24 24"><polygon points="6,5 18,12 6,19"></polygon></svg>
         </div>
     </div>
-    <audio id="audio" src="https://raw.githubusercontent.com/provxpeuser/Harlem-My-King-V2/refs/heads/main/just%20a%20chill%20guy%20listening%20to%20chill%20guy%20music%20%5BTubeRipper.com%5D.m4a"></audio>
-
-<canvas id="particleCanvas"></canvas>
+    
+    <audio id="audio"></audio>
 
 
 <!--<div class="container" id="container">
@@ -782,40 +764,86 @@ function openURLFromButton(button) {
     loadWebsiteInNewTab(url);
 }
 
-const audio = document.getElementById("audio");
+const songs = [
+            { title: "Chill Guy Theme", artist: "Hinoki Wood", url: "https://raw.githubusercontent.com/provxpeuser/Harlem-My-King-V2/refs/heads/main/just%20a%20chill%20guy%20listening%20to%20chill%20guy%20music%20%5BTubeRipper.com%5D.m4a", pfp: "https://i.pinimg.com/originals/ba/e6/ee/bae6ee176434ff2774808ad29de2a6e8.jpg" },
+            { title: "Headlock", artist: " Imogen Heap", url: "https://raw.githubusercontent.com/provxpeuser/Harlem-My-King-V2/refs/heads/main/Imogen%20Heap%20-%20Headlock%20(Lyrics).mp3", pfp: "data:image/jpeg;base64,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" },
+            { title: "Doc Mc Stuffins x Thats what I like Remix", artist: "Def Not A White Nigga", url: "https://raw.githubusercontent.com/provxpeuser/Harlem-My-King-V2/refs/heads/main/Doc%20Mcstuffins%20x%20That%20s%20What%20I%20Like%20%7C%20(Mashup)%20Bruno%20Mars%20ft.%20Doc%20Mcstuffins.mp3", pfp: "https://upload.wikimedia.org/wikipedia/en/1/15/Doc_McStuffins_logo.png" }
+        ];
+
+        let currentSongIndex = 0;
+        const audio = document.getElementById("audio");
         const playBtn = document.querySelector(".play");
         const pauseBtn = document.querySelector(".pause");
         const elapsed = document.querySelector(".elapsed");
-        const timeNow = document.querySelector(".time_now");
-        const timeFull = document.querySelector(".time_full");
+        const currentTimeText = document.querySelector(".current-time");
+        const totalTimeText = document.querySelector(".total-time");
+        const pfp = document.querySelector(".pfp");
 
-        playBtn.addEventListener("click", () => {
+        function loadSong(index) {
+            const song = songs[index];
+            document.querySelector(".title-1").textContent = song.title;
+            document.querySelector(".title-2").textContent = song.artist;
+            audio.src = song.url;
+            pfp.style.backgroundImage = `url('${song.pfp}')`;
+            audio.load();
+            audio.onloadedmetadata = () => {
+                totalTimeText.textContent = formatTime(audio.duration);
+            };
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.style.display = "none";
+                pauseBtn.style.display = "inline";
+            } else {
+                audio.pause();
+                playBtn.style.display = "inline";
+                pauseBtn.style.display = "none";
+            }
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
             audio.play();
+            updatePlayButton();
+        }
+
+        function prevSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(currentSongIndex);
+            audio.play();
+            updatePlayButton();
+        }
+
+        function updatePlayButton() {
             playBtn.style.display = "none";
             pauseBtn.style.display = "inline";
-        });
-
-        pauseBtn.addEventListener("click", () => {
-            audio.pause();
-            playBtn.style.display = "inline";
-            pauseBtn.style.display = "none";
-        });
-
-        audio.addEventListener("loadedmetadata", () => {
-            timeFull.textContent = formatTime(audio.duration);
-        });
+        }
 
         audio.addEventListener("timeupdate", () => {
             const progress = (audio.currentTime / audio.duration) * 100;
             elapsed.style.width = `${progress}%`;
-            timeNow.textContent = formatTime(audio.currentTime);
+            currentTimeText.textContent = formatTime(audio.currentTime);
         });
+
+        function seek(event) {
+            const bar = document.querySelector(".time");
+            const clickX = event.offsetX;
+            const barWidth = bar.clientWidth;
+            const seekTime = (clickX / barWidth) * audio.duration;
+            audio.currentTime = seekTime;
+        }
 
         function formatTime(seconds) {
             const min = Math.floor(seconds / 60);
             const sec = Math.floor(seconds % 60);
             return `${min}:${sec < 10 ? "0" : ""}${sec}`;
         }
+
+        // Load first song on page load
+        loadSong(currentSongIndex);
 
 function loadWebsiteInNewTab(url) {
     const title = 'Home - Google Drive';
