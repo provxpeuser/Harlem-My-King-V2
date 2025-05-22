@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  My Apps </title>
- <!--   <div class="announcement-evade">
-        <div class="name-space">TaleseOwnSagLock | @FlowerBedJeb</div>
-        <div class="divider"></div>
-        <div class="message">Announcement : Version 3.0.0 is coming out of beta soon so be aware 👀.</div>
-    </div> -->
+<div class="announcement-evade" id="countdown-announcement">
+    <div class="name-space">Harlem My King 3.0.0 Release</div>
+    <div class="divider"></div>
+    <div class="message" id="countdown-message">Loading countdown...</div>
+</div>
         <button class="error-button"> Version 3.0.0 Before Release</button>
         <div class="time-container" id="timeDisplay">Loading time...</div>
 </head>
@@ -937,6 +937,42 @@ const songs = [
         // Load first song on page load
         loadSong(currentSongIndex);
 
+// Set the target date and time: May 22 at 7:30 AM
+const targetDate = new Date('2025-05-22T07:30:00');
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now; // milliseconds
+
+    const messageElement = document.getElementById('countdown-message');
+
+    if (diff <= 0) {
+        messageElement.innerHTML = "The event has started!";
+        clearInterval(countdownInterval);
+        return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / (3600 * 24));
+    const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    let displayStr = '';
+    if (days > 0) {
+        displayStr += `${days}d `;
+    }
+    displayStr += `${hours.toString().padStart(2, '0')}:` +
+                  `${minutes.toString().padStart(2, '0')}:` +
+                  `${seconds.toString().padStart(2, '0')}`;
+
+    document.getElementById('countdown-message').innerHTML = displayStr;
+}
+
+// Start the countdown timer updating every second
+const countdownInterval = setInterval(updateCountdown, 1000);
+updateCountdown(); // initial call      
+
         function loadWebsiteInNewTab(url) {
     const title = 'Home - Google Drive';
     const favicon = 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png';
@@ -1251,20 +1287,6 @@ document.addEventListener("keydown", function(event) {
                 window.location.href = "https://myapps.classlink.com/home"; // Redirect to Google Drive
             }
         });
-
-        setTimeout(() => {
-        let announcement = document.querySelector(".announcement-evade");
-        if (announcement) {
-            announcement.classList.add("fade-out");
-
-            // Remove element after fade-out completes (1s)
-            setTimeout(() => {
-                if (announcement) {
-                    announcement.style.display = "none";
-                }
-            }, 1000);
-        }
-    }, 10000);
 
 
         // Delay fade-out effect to prevent instant disappearance
